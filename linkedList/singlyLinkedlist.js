@@ -111,6 +111,59 @@ class SinglyLinkedList {
     return null
   }
 
+  deleteValue(value) {
+    let tmpNode = this.head
+    let prev = null
+    if (tmpNode.value === value) {
+      this.head = tmpNode.next
+      return
+    }
+    while (tmpNode) {
+      if (value === tmpNode.value) {
+        break
+      }
+      prev = tmpNode
+      tmpNode = tmpNode.next
+    }
+    if (prev) {
+      prev.next = tmpNode.next
+    } else {
+      console.log('no value found')
+    }
+  }
+
+  insertBeforeAndAfter(target, value1, value2) {
+    const node1 = new Node(value1)
+    const node2 = new Node(value2)
+    let tmpNode = this.head
+
+    if (tmpNode.value === target) {
+      node1.next = tmpNode
+      this.head = node1
+      node2.next = tmpNode.next
+      tmpNode.next = node2
+      return
+    }
+
+    let prev=null
+    while (tmpNode) {
+      if (tmpNode.value === target) {
+        break
+      }
+      prev  = tmpNode
+      tmpNode = tmpNode.next
+    }
+
+    if (tmpNode) {
+      node1.next = tmpNode
+      prev.next = node1
+      node2.next = tmpNode.next
+      tmpNode.next = node2
+      return
+    }
+    console.log('no target found')
+  }
+
   display() {
     let tmpNode = this.head
     while (tmpNode) {
@@ -119,6 +172,17 @@ class SinglyLinkedList {
       tmpNode = tmpNode.next
     }
   }
+
+  displayReverse() {
+    const tmpNode = this.head
+    this.displayReverseHelper(tmpNode)
+  }
+  displayReverseHelper(tmpNode) {
+    if(!tmpNode) return
+    this.displayReverseHelper(tmpNode.next)
+    process.stdout.write(tmpNode.value+', ')
+  }
+  
 
 
   // * insert using recursion
@@ -142,7 +206,7 @@ class SinglyLinkedList {
       if (tmpNode.next && tmpNode.value === tmpNode.next.value) {
         tmpNode.next = tmpNode.next.next
       } else {
-        tmpNode = tmpNode.next 
+        tmpNode = tmpNode.next
       }
     }
   }
@@ -162,50 +226,62 @@ list.insertStart(1)
 list.insertEnd(100)
 list.insertStart(6)
 list.insert(201, 4)
-list.insert(1101, 0)
-list.insert(1101, 10)
-
+list.insert(2, 0)
+// list.insert(1101, 10)
 list.display()
+console.log('\nreverse order')
+list.displayReverse()
 
-console.log('\nafter deleteFirst operation ')
-list.deleteFirst()
-list.deleteFirst()
-list.display()
+// console.log('\ninert node before and after')
+// list.insertBeforeAndAfter(1,1999,2000)
+// list.insertBeforeAndAfter(2,1999,2000)
+// list.insertBeforeAndAfter(100,1999,2000)
+// list.display()
 
-console.log('\nafter deleteLast operation ')
-list.deleteLast()
-list.deleteLast()
-list.display()
+// console.log('\nafter delete value operation ')
+// list.deleteValue(10)
+// list.display()
 
-console.log('\nafter delete operation ')
-list.delete(3)
-list.delete(7)
-list.delete(0)
-list.display()
 
-console.log('\ninsert using recursion ')
-list.insertRec(2000, 0)
-list.insertRec(3, 3)
-list.insertRec(4, 3)
-list.insertRec(5, 3)
-list.insertRec(4, 5)
+// console.log('\nafter deleteFirst operation ')
+// list.deleteFirst()
+// list.deleteFirst()
+// list.display()
 
-list.display()
+// console.log('\nafter deleteLast operation ')
+// list.deleteLast()
+// list.deleteLast()
+// list.display()
+
+// console.log('\nafter delete operation ')
+// list.delete(3)
+// list.delete(7)
+// list.delete(0)
+// list.display()
+
+// console.log('\ninsert using recursion ')
+// list.insertRec(2000, 0)
+// list.insertRec(3, 3)
+// list.insertRec(4, 3)
+// list.insertRec(5, 3)
+// list.insertRec(4, 5)
+
+// list.display()
 
 
 // * remove duplicates
-console.log('\nremove duplicates problem')
-list.insertEnd(1)
-list.insertEnd(1)
-list.insertEnd(1)
-list.insertEnd(2)
-list.insertEnd(3)
-list.insertEnd(3)
-list.display()
+// console.log('\nremove duplicates problem')
+// list.insertEnd(1)
+// list.insertEnd(1)
+// list.insertEnd(1)
+// list.insertEnd(2)
+// list.insertEnd(3)
+// list.insertEnd(3)
+// list.display()
 
-console.log('\nafter removing')
-list.deleteDuplicates()
-list.display()
+// console.log('\nafter removing')
+// list.deleteDuplicates()
+// list.display()
 
 
 
