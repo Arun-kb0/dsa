@@ -1,4 +1,3 @@
- // sort(p)
-  // sort(s)
-  // console.log(s)
-  // console.log(p)
+if (str[l] === str[r]) {
+      //   set.delete(str[l])
+      // }
