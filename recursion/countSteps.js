@@ -9,9 +9,10 @@ function countSteps(n) {
 }
 
 function countStepsHelper(n, steps) {
-  if(n===0) return steps
+  if (n === 0) return steps
   if (n % 2 === 0) {
-    return countStepsHelper(Math.floor(n / 2), ++steps)
+    return countStepsHelper(n/2, ++steps)
+  } else {
+    return countStepsHelper(n-1, ++steps)
   }
-  return countStepsHelper(n - 1, ++steps)
 }
