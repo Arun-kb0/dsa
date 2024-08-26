@@ -1,45 +1,35 @@
 // ! not finished
 
-// const p = 'abc'
-// const s = "abcabcbb"
-// console.log('check anagram = ', checkAnagram(p, s))
+// const p = 'cab', s = 'abc'
+const s = "anagram", p = "nagaram"
+console.log('check anagram = ', checkAnagram(p, s))
 
 function checkAnagram(p, s) {
+  if (p.length !== s.length) return false
   let pCount = new Map()
   let sCount = new Map()
+  const n = p.length
 
-  for (let i = 0; i < p.length; i++) {
+  for (let i = 0; i < n; i++) {
     pCount.set(p[i], pCount.get(p[i]) + 1 || 1)
-  }
-  for (let i = 0; i < s.length; i++) {
     sCount.set(s[i], sCount.get(s[i]) + 1 || 1)
   }
-
-  const result = []
-  let count = 0
-  for (let i = 0; i < p.length; i++) {
-    if (pCount.has(p[i]) === sCount.has(p[i])) {
-      pCount.set(pCount.get(p[i]) - 1)
-      if (pCount.get(p[i]) === 0) {
-        pCount.delete(p[i])
-      }
-      count++
-    }
-    if (count === p.length) {
-      result.push(count - i)
-      count = 0
+  console.log(pCount)
+  console.log(sCount)
+  for (let i = 0; i < n; i++) {
+    if (pCount.get(s[i]) !== sCount.get(s[i])) {
+      return false
     }
   }
-  return result
+  return true
 }
 
 
-const p = 'cab'
-const s = 'abc'
-
+// const p = 'cab'
+// const s = 'abc'
 // const p = 'cabs'
 // const s = 'abca'
-console.log('is anagram ', checkStringsAreAnagram(p, s))
+// console.log('is anagram ', checkStringsAreAnagram(p, s))
 
 function checkStringsAreAnagram(p, s) {
   if (s.length !== p.length) return false
@@ -61,4 +51,9 @@ function sort(str) {
     }
   }
   return arr.join('')
+}
+
+
+function anagramOpt() {
+
 }
