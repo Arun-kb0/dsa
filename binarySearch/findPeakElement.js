@@ -19,7 +19,7 @@ function findPeak(nums) {
       return nums[m]
     }
 
-    if (nums[m] > nums[m - 1]) {
+    if (nums[m]> nums[m-1]) {
       s = m + 1
     } else {
       e = m - 1
