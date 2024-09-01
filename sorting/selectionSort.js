@@ -1,4 +1,5 @@
 // * selection sort
+// * find max  
 // const arr = [0, 22, -10, 4, 2, 9]
 // const arr = [9]
 const arr = [9, 6, 4, 3, 1]
