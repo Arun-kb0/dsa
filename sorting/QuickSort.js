@@ -3,8 +3,8 @@
 // *
 
 
-// const arr = [3, 1, 5, 10, -9, 7]
-const arr = [3]
+// const arr = [3]
+const arr = [3, 1, 5, 10, -9, 7]
 console.log('input = ', arr)
 quickSort(arr, 0, arr.length - 1)
 console.log('output = ', arr)
