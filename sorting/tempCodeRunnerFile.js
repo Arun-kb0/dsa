@@ -1,26 +1,13 @@
-const arr = [9, 6, 4, 3, 1]
-console.log(selectionSort(arr))
 
+// function convertToZigzag(arr = []) {
+//   arr.sort((a, b) => a - b); // Sort the array in ascending order
 
-function selectionSort(arr = []) {
-  const n = arr.length
-  const swap = (idx1, idx2) => {
-    let tmp = arr[idx1]
-    arr[idx1] = arr[idx2]
-    arr[idx2] = tmp
-  }
-  for (let i = 0; i < n; i++) {
-    let max = Number.MIN_VALUE
-    let maxIdx = 0
-    for (let j = 0; j < n - i; j++) {
-      if (max < arr[j]) {
-        max = arr[j]
-        maxIdx = j
-      }
-      if (j === n - i - 1) {
-        swap(maxIdx, j)
-      }
-    }
-  }
-  return arr
-}
+//   for (let i = 1; i < arr.length - 1; i += 2) {
+//     // Swap current element with the next element
+//     let tmp = arr[i];
+//     arr[i] = arr[i + 1];
+//     arr[i + 1] = tmp;
+//   }
+
+//   return arr;
+// }
