@@ -32,7 +32,13 @@ class Stack{
     return this.pointer===-1
   }
 
+  display() {
+    console.log(this.arr)
+  }
+
 }
+
+module.exports = { Stack}
 
 
 const stack = new Stack()
@@ -40,6 +46,8 @@ stack.push(12)
 stack.push(1)
 stack.push(6)
 stack.push(9)
+
+stack.display()
 
 console.log('peek  = ',stack.peak())
 console.log(stack.pop())

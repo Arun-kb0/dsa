@@ -6,7 +6,7 @@
 // const nums = [0, 4, 3, 0], target = 0 //out [0,3]
 // const nums = [-1, -2, -3, -4, -5], target = -8 //out [2,4]
 // const nums = [-1, 2, -3, -4, -5], target = -1 //out [1,2]
-// const nums = [3, 2, 95, 4, -3], target = 92 //out [2,4]
+const nums = [3, 2, 95, 4, -3], target = 92 //out [2,4]
 
 console.log(twoSum(nums, target))
 
