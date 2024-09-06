@@ -3,7 +3,7 @@
 // const arr = [0, 22, -10, 4, 2, 9]
 // const arr = [9]
 // const arr = [9, 6, 4, 3, 1]
-// console.log(selectionSort(arr))
+console.log(selectionSort(arr))
 
 // const persons = [{ name: "Alice", age: 34 }, { name: "Bob", age: 25 }, { name: "Charlie", age: 20 }]
 // console.log(selectionSortPersons(persons))

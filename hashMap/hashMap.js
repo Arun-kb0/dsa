@@ -42,7 +42,7 @@ class HashTable {
     }
   }
 
-  display() { 
+  display() {
     let result = ''
     for (let val of this.table) {
       if (!val) continue
