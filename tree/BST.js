@@ -14,6 +14,30 @@ class BST {
     this.root = null
   }
 
+  validate(node = this.root, min = -Infinity, max = Infinity) {
+    if (!node) return true
+    if (node.value <=min  || node.value>=max) return false
+    return this.validate(node.left, min, node.value)
+      && this.validate(node.right, node.value, max)
+  }
+
+  findNearest(value, node = this.root, closest = null) {
+    if (!node) return closest
+    if (closest === null
+      || Math.abs(node.value - value) < Math.abs(closest - value)
+    ) {
+      closest = node.value
+    }
+
+    if (value < node.value) {
+      return this.findNearest(value, node.left, closest)
+    } else if (value > node.value) {
+      return this.findNearest(value, node.right, closest)
+    } else {
+      return node.value
+    }
+  }
+
   delete(value, node = this.root,) {
     if (!node) return null
 
@@ -138,3 +162,7 @@ bst.postOrder()
 console.log('\nafter deletion')
 bst.delete(6)
 bst.postOrder()
+
+
+console.log('\nclosest = ', bst.findNearest(6))
+console.log('\nisBinary tree', bst.validate())
