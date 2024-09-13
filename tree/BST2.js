@@ -132,12 +132,13 @@ bst.populate([10, 6, 4, 9, 15, 11, 16])
 console.log(bst.contains(10))
 console.log(bst.contains(9))
 
-console.log('\npre order ')
-bst.preOrder()
-console.log('\nin order ')
+// console.log('\npre order ')
+// bst.preOrder()
+// console.log('\nin order ')
+console.log('\nsort array order ')
 bst.inOrder()
-console.log('\npost order ')
-bst.postOrder()
+// console.log('\npost order ')
+// bst.postOrder()
 
 console.log('\nafter remove')
 bst.remove(10)
@@ -151,7 +152,7 @@ bst.inOrder()
 // * validate bst
 console.log('\nis binary search tree = ', validateBst(bst.root))
 const target = 3
-console.log(`value closest to ${target} = `, findClosest(target, bst.root))
+console.log(`\nvalue closest to ${target} = `, findClosest(target, bst.root))
 
 function findClosest(target, node) {
   let closest = -Infinity
